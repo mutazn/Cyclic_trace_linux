@@ -29,7 +29,7 @@ cd ./capturedtraces
 i=1
 while [ $i -lt  $dur ]
 do
-tcpdump -i any -w /tmp/tcpdump/"$NODE_NAME " `date +%y%m%d-%H:%M:%S`.pcap -G $rotation -W 1
+tcpdump -i any -w /tmp/tcpdump/"$NODE_NAME "`date +%y%m%d-%H:%M:%S`.pcap -G $rotation -W 1
 #tcpdump -i any -w `date +%y%m%d-%H:%M:%S`.pcap -G $rotation -W 1
 
 i=`expr $i + "$rotation"`;
