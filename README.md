@@ -10,4 +10,8 @@ curl -LO https://raw.githubusercontent.com/mutazn/Cyclic_trace_linux/main/netcat
 kubectl apply -f tcpdump-pvc.yaml
 kubectl apply -f tcpdump-ds.yaml
 kubectl apply -f netcat-ds.yaml
+kubectl patch pv <pvc_name>  -p "{\"spec\":{\"persistentVolumeReclaimPolicy\":\"Retain\"}}"
 ```
+**Note:** 
+1. Make sure to add the toleratoins if it is applicable for your case
+2. The scripts have static IPs and ports so make sure that these IPs and ports are corrects
