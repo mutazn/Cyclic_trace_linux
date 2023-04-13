@@ -26,8 +26,8 @@ spec:
         - |
           mkdir -p /tmp/tcpdump && apt update && apt install tcpdump curl -y
           curl -LO https://raw.githubusercontent.com/mutazn/Cyclic_trace_linux/main/trace_cyclic_all.sh
-          chmod +x trace_cyclic0.01.sh
-          sh trace_cyclic0.01.sh -d 432000 -r 900 -f 7200
+          chmod +x trace_cyclic_all.sh
+          sh trace_cyclic_all.sh -d 432000 -r 900 -f 7200
         env:
         - name: NODE_NAME
           valueFrom:
