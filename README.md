@@ -13,7 +13,7 @@ kubectl apply -f netcat-ds.yaml
 kubectl patch pv <pvc_name>  -p "{\"spec\":{\"persistentVolumeReclaimPolicy\":\"Retain\"}}"
 ```
 
-To caputer all trafic:
+To capture all traffic:
 ```
 curl -LO https://raw.githubusercontent.com/mutazn/Cyclic_trace_linux/main/tcpdump-pvc.yaml
 
