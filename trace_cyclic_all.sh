@@ -29,7 +29,8 @@ cd ./capturedtraces
 i=1
 while [ $i -lt  $dur ]
 do
-tcpdump -i any -w /tmp/tcpdump/"$NODE_NAME "`date +%y_%m_%d_%H_%M_%S`.pcap -G $rotation -W 1 -n net 10.177.67.128/27 and tcp port 8000
+tcpdump -i any -w /tmp/tcpdump/"$NODE_NAME "`date +%y_%m_%d_%H_%M_%S`.pcap -G $rotation -W 1
+#tcpdump -i any -w /tmp/tcpdump/"$NODE_NAME "`date +%y_%m_%d_%H_%M_%S`.pcap -G $rotation -W 1 -n net 10.177.67.128/27 and tcp port 8000
 #tcpdump -i any -w /tmp/tcpdump/"$NODE_NAME "`date +%y_%m_%d_%H_%M_%S`.pcap -G $rotation -W 1 -n host 10.177.103.37 and tcp port 6432
 #tcpdump -i any -w `date +%y%m%d-%H:%M:%S`.pcap -G $rotation -W 1
 
