@@ -1,3 +1,9 @@
+#In case you need to use static Azure file then you have to create a kubernetes secret:
+#STORAGE_KEY=$(az storage account keys list --resource-group <storage-account-rg> --account-name <storage-account-name> --query "[0].value" -o tsv)
+#AKS_PERS_STORAGE_ACCOUNT_NAME=<storage-account-rg>
+#kubectl create secret generic azure-secret --from-literal=azurestorageaccountname=$AKS_PERS_STORAGE_ACCOUNT_NAME --from-literal=azurestorageaccountkey=$STORAGE_KEY
+#create share file name called tcpdump-files
+#Add (volumeName: azurefile) under spec to the pvc yaml
 apiVersion: v1
 kind: PersistentVolume
 metadata:
@@ -14,7 +20,7 @@ spec:
   csi:
     driver: file.csi.azure.com
     readOnly: false
-    #volumeHandle: unique-volumeid  # make sure this volumeid is unique for every identical share in the cluster
+    volumeHandle: azurefile-tcpdumpfiles  # make sure this volumeid is unique for every identical share in the cluster
     volumeAttributes:
       #resourceGroup: resourceGroupName  # optional, only set this when storage account is not in the same resource group as node
       shareName: tcpdump-files
