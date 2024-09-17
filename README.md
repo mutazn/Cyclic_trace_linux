@@ -26,5 +26,5 @@ kubectl patch pv <pvc_name>  -p "{\"spec\":{\"persistentVolumeReclaimPolicy\":\"
 ```
 
 **Note:** 
-1. Make sure to add the toleratoins if it is applicable for your case
-2. The scripts have static IPs and ports so make sure that these IPs and ports are corrects
+1. Make sure to add the toleratoins if it is applicable for your case.
+2. The script `trace_cyclic0.01.sh` has static IPs and ports so make sure that these IPs and ports are corrects.
